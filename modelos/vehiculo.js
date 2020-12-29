@@ -6,6 +6,10 @@ export class Vehiculo {
         this.precio = precio;
     }
 
+    formatMoney(number) {
+        return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    }
+
     imprimir(){
         throw "Debe implementarse imprimir";
     }

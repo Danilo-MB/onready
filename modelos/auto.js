@@ -7,7 +7,9 @@ export class Auto extends Vehiculo {
         this.puertas = puertas;
     }
 
+
     imprimir(){
-        console.log("Marca: " + this.marca + " // " + "Modelo: " + this.modelo + " // " + "Puertas: " + this.puertas + " // " + "Precio: " + this.precio);
+        console.log("Marca: " + this.marca + " // " + "Modelo: " + this.modelo + " // " + 
+        "Puertas: " + this.puertas + " // " + "Precio: " + this.formatMoney(this.precio));
     }
 }

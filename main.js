@@ -3,16 +3,13 @@ import { Auto } from "./modelos/auto.js";
 
 function armarLista(){
     let lista = [];
-    lista.push(new Auto("Peugeot", "206", 4, formatMoney(200000)));
-    lista.push(new Moto("Honda", "Titan", 125, formatMoney(60000)));
-    lista.push(new Auto("Peugeot", "208", 5, formatMoney(250000)));
-    lista.push(new Moto("Yamaha", "YBR", 160, formatMoney(80500.50)));
+    lista.push(new Auto("Peugeot", "206", 4, 200000));
+    lista.push(new Moto("Honda", "Titan", 125, 60000));
+    lista.push(new Auto("Peugeot", "208", 5, 250000));
+    lista.push(new Moto("Yamaha", "YBR", 160, 80500.50));
     return lista;
 }
 
-function formatMoney(number) {
-    return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-}
 
 function imprimir(lista){
     for(let i = 0; i < lista.length; i++){
@@ -48,7 +45,9 @@ function imprimirMasCaro(lista){
 function imprimirConY(lista){
     for(let i = 0; i < lista.length; i++){
         if(lista[i].modelo.includes("Y")){
-            console.log("Vehículo que contiene en el modelo la letra ‘Y’: " + lista[i].marca + " " + lista[i].modelo + " " + formatMoney(lista[i].precio));
+            let valor = lista[i];
+            console.log("Vehículo que contiene en el modelo la letra ‘Y’: " + lista[i].marca + " " + 
+            lista[i].modelo + " " + valor.formatMoney(valor.precio));
         }
     }
 }
