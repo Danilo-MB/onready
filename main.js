@@ -4,9 +4,9 @@ import { Auto } from "./modelos/auto.js";
 function armarLista(){
     let lista = [];
     lista.push(new Auto("Peugeot", "206", 4, 200000));
-    lista.push(new Moto("Honda", "Titan", 125, 60000));
+    lista.push(new Moto("Honda", "Titan", "125cc", 60000));
     lista.push(new Auto("Peugeot", "208", 5, 250000));
-    lista.push(new Moto("Yamaha", "YBR", 160, 80500.50));
+    lista.push(new Moto("Yamaha", "YBR", "160cc", 80500.50));
     return lista;
 }
 
@@ -47,30 +47,32 @@ function imprimirConY(lista){
         if(lista[i].modelo.includes("Y")){
             let valor = lista[i];
             console.log("Vehículo que contiene en el modelo la letra ‘Y’: " + lista[i].marca + " " + 
-            lista[i].modelo + " " + valor.formatMoney(valor.precio));
+                lista[i].modelo + " " + valor.formatMoney(valor.precio));
         }
     }
 }
 
 function imprimirMayorAMenor(lista){
+    console.log("Vehículos ordenados por precio de mayor a menor:");
     lista.sort(function(v1, v2){
         return v2.precio - v1.precio;
     })
-    console.log(lista.marca + " " + lista.modelo);
+    for(let i = 0; i < lista.length; i++){
+        console.log(lista[i].marca + " " + lista[i].modelo);
+    }
 }
 
 
 function ejecutar(){
     let listaDeVehiculos = armarLista();
 
-    imprimir(listaDeVehiculos);                          //Imprimir elementos de la lista
+    imprimir(listaDeVehiculos);
     console.log("=============================");
-    imprimirMasCaro(listaDeVehiculos);                   //Imprimir el más caro
-    imprimirMasBarato(listaDeVehiculos);                 //Imprimir el más barato
-    imprimirConY(listaDeVehiculos);                      //Imprimir vehículo con Y
+    imprimirMasCaro(listaDeVehiculos);      
+    imprimirMasBarato(listaDeVehiculos);            
+    imprimirConY(listaDeVehiculos);             
     console.log("=============================");
-    console.log("Vehículos ordenados por precio de mayor a menor:");
-    imprimirMayorAMenor(listaDeVehiculos);               //Imprimir de mayor a menor precio
+    imprimirMayorAMenor(listaDeVehiculos);          
 }
 
 ejecutar();

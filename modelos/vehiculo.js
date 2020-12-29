@@ -7,7 +7,7 @@ export class Vehiculo {
     }
 
     formatMoney(number) {
-        return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        return number.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' });
     }
 
     imprimir(){

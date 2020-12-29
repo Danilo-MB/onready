@@ -9,7 +9,8 @@ export class Moto extends Vehiculo {
 
 
     imprimir(){
-        console.log("Marca: " + this.marca + " // " + "Modelo: " + this.modelo + " // " + "Cilindrada: " + this.cilindrada + " // " + "Precio: " + this.formatMoney(this.precio));
+        console.log("Marca: " + this.marca + " // " + "Modelo: " + this.modelo + " // " 
+            + "Cilindrada: " + this.cilindrada + " // " + "Precio: " + this.formatMoney(this.precio));
     }
 
 
